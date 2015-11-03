@@ -119,10 +119,10 @@ class HighlightUnicodeListener(DeferedViewListener):
         settings = view.settings()
         color_name = settings.get('highlight_unicode_color_name', DEFAULT_COLOR_NAME)
         regions = []
-        # for x in view.find_all(u'[' + ''.join(self.chars.keys()) + u']+'):
-        #     regions.append(x)
-        for x in view.find_all(u'[ \t]+$'):
+        for x in view.find_all(u'[' + ''.join(self.chars.keys()) + u']+'):
             regions.append(x)
+        # for x in view.find_all(u'[ \t]+$'):
+        #     regions.append(x)
 
         #for x in view.find_all(u'^$'):
         #    regions.append(x)
